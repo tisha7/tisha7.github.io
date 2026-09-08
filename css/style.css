@@ -1386,3 +1386,417 @@ footer {
     font-size: 7px;
   }
 }
+
+/* =========================================================
+   PARENTURA SHOWCASE — PREMIUM CASE STUDY PRESENTATION
+   ========================================================= */
+
+.project-parentura {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  padding: 0 !important;
+  background:
+    radial-gradient(circle at 76% 22%, rgba(45, 212, 191, 0.18), transparent 30%),
+    radial-gradient(circle at 16% 85%, rgba(59, 130, 246, 0.10), transparent 28%),
+    linear-gradient(135deg, #081217 0%, #10242b 52%, #060d11 100%);
+}
+
+.parentura-showcase {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  padding: 44px 46px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parentura-browser {
+  position: relative;
+  width: min(82%, 700px);
+  border-radius: 15px;
+  overflow: hidden;
+  background: #101719;
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(255, 255, 255, 0.10);
+  transform: rotate(-1deg);
+  z-index: 2;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.project-card:hover .parentura-browser {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow:
+    0 44px 95px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.parentura-browser-top {
+  position: relative;
+  height: 38px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #172126;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.parentura-dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.parentura-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.parentura-url {
+  flex: 1;
+  min-width: 0;
+  height: 22px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 9px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.parentura-live-dot {
+  flex-shrink: 0;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #5eead4;
+  opacity: 0.85;
+}
+
+.parentura-screen {
+  position: relative;
+  height: 405px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.parentura-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02),
+    transparent 15%,
+    transparent 82%,
+    rgba(0, 0, 0, 0.10)
+  );
+}
+
+.parentura-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transform: translateY(0);
+  transition: transform 7s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.project-card:hover .parentura-screen img {
+  transform: translateY(calc(-100% + 405px));
+}
+
+.parentura-mobile {
+  position: absolute;
+  right: 5%;
+  bottom: 30px;
+  width: 116px;
+  height: 225px;
+  padding: 5px;
+  border-radius: 19px;
+  background: #0b1012;
+  box-shadow:
+    0 25px 52px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(255, 255, 255, 0.13);
+  overflow: hidden;
+  z-index: 4;
+  transform: rotate(4deg);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.project-card:hover .parentura-mobile {
+  transform: rotate(0deg) translateY(-7px);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.58),
+    0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.parentura-mobile-top {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  z-index: 5;
+  width: 38px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #080c0e;
+}
+
+.parentura-mobile-top span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  margin: 1.5px 0 0 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.parentura-mobile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 14px;
+}
+
+.parentura-badge {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  background: rgba(6, 16, 20, 0.72);
+  backdrop-filter: blur(14px);
+  color: #fff;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+.parentura-badge span {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.14);
+  color: #5eead4;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.parentura-badge strong {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.parentura-caption {
+  position: absolute;
+  left: 5%;
+  bottom: 30px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #fff;
+}
+
+.parentura-caption span {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #5eead4;
+}
+
+.parentura-caption strong {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+  .project-parentura,
+  .parentura-showcase {
+    min-height: 450px;
+  }
+
+  .parentura-showcase {
+    padding: 34px 30px 34px;
+  }
+
+  .parentura-browser {
+    width: 82%;
+  }
+
+  .parentura-screen {
+    height: 340px;
+  }
+
+  .parentura-screen img {
+    min-height: 340px;
+  }
+
+  .project-card:hover .parentura-screen img {
+    transform: translateY(calc(-100% + 340px));
+  }
+
+  .parentura-mobile {
+    width: 92px;
+    height: 180px;
+    right: 4%;
+    bottom: 24px;
+    border-radius: 15px;
+  }
+
+  .parentura-mobile img {
+    border-radius: 11px;
+  }
+
+  .parentura-badge {
+    top: 20px;
+    right: 20px;
+  }
+
+  .parentura-caption {
+    left: 4%;
+    bottom: 24px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .project-parentura,
+  .parentura-showcase {
+    min-height: 355px;
+  }
+
+  .parentura-showcase {
+    padding: 25px 18px 26px;
+  }
+
+  .parentura-browser {
+    width: 88%;
+    border-radius: 11px;
+    transform: none;
+  }
+
+  .parentura-browser-top {
+    height: 28px;
+    padding: 0 9px;
+    gap: 8px;
+  }
+
+  .parentura-dots {
+    gap: 3px;
+  }
+
+  .parentura-dots span {
+    width: 5px;
+    height: 5px;
+  }
+
+  .parentura-url {
+    height: 17px;
+    padding: 2px 7px;
+    font-size: 6px;
+  }
+
+  .parentura-live-dot {
+    font-size: 5px;
+  }
+
+  .parentura-screen {
+    height: 255px;
+  }
+
+  .parentura-screen img {
+    min-height: 255px;
+  }
+
+  .project-card:hover .parentura-screen img {
+    transform: translateY(calc(-100% + 255px));
+  }
+
+  .parentura-mobile {
+    width: 66px;
+    height: 132px;
+    right: 3%;
+    bottom: 17px;
+    padding: 4px;
+    border-radius: 12px;
+    transform: rotate(3deg);
+  }
+
+  .parentura-mobile img {
+    border-radius: 9px;
+  }
+
+  .parentura-mobile-top {
+    top: 6px;
+    width: 24px;
+    height: 5px;
+  }
+
+  .parentura-mobile-top span {
+    width: 3px;
+    height: 3px;
+    margin: 1px 0 0 16px;
+  }
+
+  .parentura-badge {
+    top: 13px;
+    right: 13px;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .parentura-badge span {
+    width: 16px;
+    height: 16px;
+    font-size: 7px;
+  }
+
+  .parentura-badge strong {
+    font-size: 7px;
+  }
+
+  .parentura-caption {
+    left: 3%;
+    bottom: 17px;
+  }
+
+  .parentura-caption span {
+    font-size: 6px;
+  }
+
+  .parentura-caption strong {
+    font-size: 9px;
+  }
+}
