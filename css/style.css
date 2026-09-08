@@ -2358,6 +2358,8 @@ footer {
 .propflow-mobile-frame {
   position: relative;
   width: 118px;
+  max-width: 118px;
+  flex: 0 0 118px;
   padding: 5px;
   box-sizing: border-box;
   overflow: hidden;
@@ -2396,6 +2398,7 @@ footer {
 .propflow-mobile-frame img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 15px;
 }
