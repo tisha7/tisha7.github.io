@@ -2240,3 +2240,446 @@ footer {
     padding-right: 8px;
   }
 }
+
+
+/* =========================================================
+   PROPFLOW AI CRM — PREMIUM SHOWCASE
+========================================================= */
+
+.project-propflow {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 22%, rgba(94, 234, 212, 0.12), transparent 32%),
+    radial-gradient(circle at 18% 80%, rgba(20, 184, 166, 0.08), transparent 30%),
+    #081522;
+}
+
+.propflow-showcase {
+  position: relative;
+  min-height: 520px;
+  padding: 42px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.propflow-browser {
+  width: min(100%, 780px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0b1725;
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(94, 234, 212, 0.035);
+  transform: perspective(1400px) rotateX(1deg);
+  transition: transform 0.45s ease;
+}
+
+.propflow-browser-top {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+  background: #0a1421;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.13);
+}
+
+.propflow-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.propflow-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.42);
+}
+
+.propflow-url {
+  flex: 1;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.propflow-live {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #7dd3c7;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.propflow-live i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #5eead4;
+  box-shadow: 0 0 10px rgba(94, 234, 212, 0.8);
+}
+
+.propflow-screen {
+  display: flex;
+  min-height: 360px;
+  background: #0d1b2d;
+}
+
+.propflow-sidebar {
+  width: 145px;
+  flex: 0 0 145px;
+  padding: 18px 10px;
+  background: #091522;
+  border-right: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.propflow-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px 22px;
+}
+
+.propflow-brand span {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: rgba(94, 234, 212, 0.12);
+  color: #5eead4;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.propflow-brand strong {
+  font-size: 10px;
+  color: #e2e8f0;
+}
+
+.propflow-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 8px;
+  margin-bottom: 4px;
+  border-radius: 7px;
+  color: #64748b;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.propflow-nav span {
+  width: 13px;
+  text-align: center;
+  font-size: 9px;
+}
+
+.propflow-nav.active {
+  background: rgba(94, 234, 212, 0.08);
+  color: #d9fffa;
+}
+
+.propflow-main {
+  flex: 1;
+  min-width: 0;
+  padding: 22px;
+}
+
+.propflow-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.propflow-heading > div:first-child span {
+  color: #5eead4;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.propflow-heading h4 {
+  margin-top: 4px;
+  font-size: 17px;
+  line-height: 1.1;
+  color: #f8fafc;
+}
+
+.propflow-avatar {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #12243a;
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.propflow-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.propflow-stats > div {
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.propflow-stats span {
+  display: block;
+  color: #64748b;
+  font-size: 7px;
+  margin-bottom: 5px;
+}
+
+.propflow-stats strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.propflow-stats small {
+  color: #5eead4;
+  font-size: 7px;
+}
+
+.propflow-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 0.8fr;
+  gap: 10px;
+}
+
+.propflow-chart,
+.propflow-ai-card {
+  min-height: 150px;
+  padding: 13px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.propflow-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.propflow-card-head strong {
+  font-size: 8px;
+  color: #cbd5e1;
+}
+
+.propflow-card-head span {
+  font-size: 6px;
+  color: #64748b;
+}
+
+.propflow-bars {
+  height: 91px;
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+  padding: 12px 5px 0;
+}
+
+.propflow-bars i {
+  flex: 1;
+  min-width: 7px;
+  border-radius: 3px 3px 1px 1px;
+  background: linear-gradient(to top, #0f766e, #5eead4);
+  opacity: 0.8;
+}
+
+.propflow-ai-card > span {
+  display: block;
+  color: #5eead4;
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.propflow-ai-card strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.propflow-ai-card p {
+  color: #64748b;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+.propflow-ai-action {
+  margin-top: 12px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  background: rgba(94, 234, 212, 0.08);
+  color: #99f6e4;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.propflow-floating {
+  position: absolute;
+  right: 24px;
+  top: 62px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 13px;
+  border: 1px solid rgba(94, 234, 212, 0.16);
+  border-radius: 10px;
+  background: rgba(9, 21, 34, 0.9);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.propflow-floating > span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: rgba(94, 234, 212, 0.1);
+  color: #5eead4;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.propflow-floating strong,
+.propflow-floating small {
+  display: block;
+}
+
+.propflow-floating strong {
+  color: #e2e8f0;
+  font-size: 8px;
+}
+
+.propflow-floating small {
+  color: #64748b;
+  font-size: 7px;
+  margin-top: 2px;
+}
+
+.propflow-badge {
+  position: absolute;
+  left: 24px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: rgba(9, 21, 34, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.propflow-badge span {
+  color: #5eead4;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.propflow-badge strong {
+  color: #cbd5e1;
+  font-size: 8px;
+}
+
+.project-card:hover .propflow-browser {
+  transform: perspective(1400px) rotateX(0deg) translateY(-3px);
+}
+
+@media (max-width: 850px) {
+  .propflow-showcase {
+    padding: 34px 22px;
+  }
+
+  .propflow-sidebar {
+    width: 115px;
+    flex-basis: 115px;
+  }
+
+  .propflow-main {
+    padding: 17px;
+  }
+
+  .propflow-floating {
+    right: 14px;
+    top: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-propflow,
+  .propflow-showcase {
+    min-height: 440px;
+  }
+
+  .propflow-showcase {
+    padding: 24px 10px;
+  }
+
+  .propflow-sidebar {
+    display: none;
+  }
+
+  .propflow-screen {
+    min-height: 310px;
+  }
+
+  .propflow-main {
+    padding: 14px;
+  }
+
+  .propflow-stats {
+    gap: 6px;
+  }
+
+  .propflow-stats > div {
+    padding: 9px;
+  }
+
+  .propflow-stats strong {
+    font-size: 13px;
+  }
+
+  .propflow-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .propflow-chart {
+    min-height: 115px;
+  }
+
+  .propflow-ai-card {
+    display: none;
+  }
+
+  .propflow-floating {
+    display: none;
+  }
+
+  .propflow-badge {
+    left: 12px;
+    bottom: 14px;
+  }
+}
