@@ -2358,11 +2358,13 @@ footer {
 .propflow-mobile-frame {
   position: relative;
   width: 118px;
+  height: 210px;
   max-width: 118px;
   flex: 0 0 118px;
   padding: 5px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   border-radius: 20px;
   background: #080d10;
   border: 1px solid rgba(255,255,255,0.16);
@@ -2373,6 +2375,21 @@ footer {
   transition:
     transform 0.5s ease,
     box-shadow 0.5s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.18) transparent;
+}
+
+.propflow-mobile-frame::-webkit-scrollbar {
+  width: 3px;
+}
+
+.propflow-mobile-frame::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.propflow-mobile-frame::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.18);
+  border-radius: 999px;
 }
 
 .project-propflow:hover .propflow-mobile-frame {
@@ -2384,12 +2401,13 @@ footer {
 
 .propflow-mobile-frame::before {
   content: "";
-  position: absolute;
-  top: 8px;
+  position: sticky;
+  top: 3px;
   left: 50%;
+  display: block;
   width: 36px;
   height: 7px;
-  transform: translateX(-50%);
+  margin: 0 auto -7px;
   border-radius: 999px;
   background: #06090b;
   z-index: 3;
@@ -2426,6 +2444,9 @@ footer {
 
   .propflow-mobile-frame {
     width: 105px;
+    height: 187px;
+    max-width: 105px;
+    flex-basis: 105px;
   }
 }
 
@@ -2460,6 +2481,9 @@ footer {
 
   .propflow-mobile-frame {
     width: 125px;
+    height: 222px;
+    max-width: 125px;
+    flex-basis: 125px;
     transform: rotate(2deg);
   }
 }
