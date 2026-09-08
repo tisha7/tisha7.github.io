@@ -2318,31 +2318,24 @@ footer {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   border-radius: 11px;
   background: #fff;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0,0,0,0.20) transparent;
-}
-
-.propflow-dashboard-window::-webkit-scrollbar {
-  width: 6px;
-}
-
-.propflow-dashboard-window::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.propflow-dashboard-window::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.22);
-  border-radius: 999px;
 }
 
 .propflow-dashboard-window img {
   display: block;
   width: 100%;
   height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transform: translateY(0);
+  transition: transform 7s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.project-propflow:hover .propflow-dashboard-window img {
+  transform: translateY(calc(-100% + 405px));
 }
 
 /* Floating mobile — Parentura-style visual depth */
@@ -2424,6 +2417,10 @@ footer {
 /* Tablet */
 
 @media (max-width: 850px) {
+  .project-propflow:hover .propflow-dashboard-window img {
+    transform: translateY(calc(-100% + 340px));
+  }
+
   .propflow-real-showcase {
     padding: 32px 14px 36px;
   }
@@ -2453,6 +2450,10 @@ footer {
 /* Mobile */
 
 @media (max-width: 600px) {
+  .project-propflow:hover .propflow-dashboard-window img {
+    transform: translateY(calc(-100% + 255px));
+  }
+
   .propflow-real-showcase {
     padding: 16px 8px 28px;
     flex-direction: column;
