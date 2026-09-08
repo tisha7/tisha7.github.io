@@ -2263,63 +2263,46 @@ footer {
   background:
     linear-gradient(
       135deg,
-      rgba(255,255,255,0.035),
+      rgba(255, 255, 255, 0.035),
       transparent 35%,
-      rgba(255,255,255,0.015)
+      rgba(255, 255, 255, 0.015)
     );
 }
 
-/* Main composition */
+/* Parentura-matched showcase sizing */
 
 .propflow-real-showcase {
   position: relative;
   width: 100%;
-  padding: 42px 20px 44px;
+  min-height: 405px;
+  padding: 32px 20px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Full-width 16:9 presentation */
+/* Full available width — same as Parentura */
 
 .propflow-dashboard-frame {
   position: relative;
   width: 100%;
   max-width: none;
-  padding: 7px;
+  overflow: hidden;
+  padding: 0;
   box-sizing: border-box;
-  border-radius: 17px;
-  background: rgba(255,255,255,0.075);
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow:
-    0 35px 85px rgba(0,0,0,0.48),
-    0 12px 30px rgba(0,0,0,0.22),
-    0 0 0 1px rgba(0,0,0,0.20);
-  transform: rotate(-0.7deg);
-  transform-origin: center;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
   z-index: 2;
-  transition:
-    transform 0.5s ease,
-    box-shadow 0.5s ease;
 }
-
-.project-propflow:hover .propflow-dashboard-frame {
-  transform: rotate(0deg) translateY(-6px);
-  box-shadow:
-    0 46px 105px rgba(0,0,0,0.56),
-    0 15px 35px rgba(0,0,0,0.25),
-    0 0 0 1px rgba(255,255,255,0.14);
-}
-
-/* Exact 16:9 viewport */
 
 .propflow-dashboard-window {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 405px;
   overflow: hidden;
-  border-radius: 11px;
   background: #fff;
 }
 
@@ -2338,153 +2321,135 @@ footer {
   transform: translateY(calc(-100% + 405px));
 }
 
-/* Floating mobile — Parentura-style visual depth */
+/* Floating mobile — same Parentura sizing */
 
 .propflow-mobile-wrap {
   position: absolute;
   right: 5%;
-  bottom: 25px;
-  z-index: 5;
-  filter: drop-shadow(0 28px 50px rgba(0,0,0,0.52));
+  bottom: 28px;
+  width: 116px;
+  height: 230px;
+  z-index: 4;
+  transform: rotate(3deg);
+  transition: transform 0.45s ease;
+}
+
+.project-propflow:hover .propflow-mobile-wrap {
+  transform: rotate(0deg) translateY(-5px);
 }
 
 .propflow-mobile-frame {
   position: relative;
-  width: 118px;
-  height: 210px;
-  max-width: 118px;
-  flex: 0 0 118px;
+  width: 116px;
+  height: 230px;
   padding: 5px;
   box-sizing: border-box;
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-radius: 20px;
-  background: #080d10;
-  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 17px;
+  background: #101719;
   box-shadow:
-    0 25px 55px rgba(0,0,0,0.54),
-    0 0 0 1px rgba(255,255,255,0.07);
-  transform: rotate(4deg);
-  transition:
-    transform 0.5s ease,
-    box-shadow 0.5s ease;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0.18) transparent;
-}
-
-.propflow-mobile-frame::-webkit-scrollbar {
-  width: 3px;
-}
-
-.propflow-mobile-frame::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.propflow-mobile-frame::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.18);
-  border-radius: 999px;
-}
-
-.project-propflow:hover .propflow-mobile-frame {
-  transform: rotate(0deg) translateY(-7px);
-  box-shadow:
-    0 32px 65px rgba(0,0,0,0.60),
-    0 0 0 1px rgba(255,255,255,0.13);
-}
-
-.propflow-mobile-frame::before {
-  content: "";
-  position: sticky;
-  top: 3px;
-  left: 50%;
-  display: block;
-  width: 36px;
-  height: 7px;
-  margin: 0 auto -7px;
-  border-radius: 999px;
-  background: #06090b;
-  z-index: 3;
+    0 22px 45px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
 }
 
 .propflow-mobile-frame img {
   display: block;
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 13px;
 }
 
-/* Tablet */
+.propflow-mobile-frame::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 8px;
+  left: 50%;
+  width: 35px;
+  height: 7px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  background: #090d0e;
+}
+
+/* Tablet — exact Parentura breakpoint */
 
 @media (max-width: 850px) {
+  .propflow-real-showcase {
+    min-height: 340px;
+    padding: 32px 14px;
+  }
+
+  .propflow-dashboard-window {
+    height: 340px;
+  }
+
   .project-propflow:hover .propflow-dashboard-window img {
     transform: translateY(calc(-100% + 340px));
   }
 
-  .propflow-real-showcase {
-    padding: 32px 14px 36px;
-  }
-
-  .propflow-dashboard-frame {
-    padding: 6px;
-    border-radius: 15px;
-  }
-
-  .propflow-dashboard-window {
-    border-radius: 10px;
-  }
-
   .propflow-mobile-wrap {
+    width: 92px;
+    height: 185px;
     right: 4%;
-    bottom: 20px;
+    bottom: 24px;
   }
 
   .propflow-mobile-frame {
-    width: 105px;
-    height: 187px;
-    max-width: 105px;
-    flex-basis: 105px;
+    width: 92px;
+    height: 185px;
+  }
+
+  .propflow-mobile-frame img {
+    border-radius: 10px;
+  }
+
+  .propflow-mobile-frame::before {
+    top: 7px;
+    width: 30px;
+    height: 6px;
   }
 }
 
-/* Mobile */
+/* Mobile — exact Parentura breakpoint */
 
 @media (max-width: 600px) {
+  .propflow-real-showcase {
+    min-height: 255px;
+    padding: 24px 8px;
+  }
+
+  .propflow-dashboard-window {
+    height: 255px;
+  }
+
   .project-propflow:hover .propflow-dashboard-window img {
     transform: translateY(calc(-100% + 255px));
   }
 
-  .propflow-real-showcase {
-    padding: 16px 8px 28px;
-    flex-direction: column;
-  }
-
-  .propflow-dashboard-frame {
-    padding: 5px;
-    border-radius: 13px;
-    transform: none;
-  }
-
-  .propflow-dashboard-window {
-    aspect-ratio: 16 / 9;
-    min-height: 0;
-    max-height: none;
-    border-radius: 9px;
-  }
-
   .propflow-mobile-wrap {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    align-self: center;
-    margin-top: -5px;
+    width: 66px;
+    height: 132px;
+    right: 3%;
+    bottom: 17px;
   }
 
   .propflow-mobile-frame {
-    width: 125px;
-    height: 222px;
-    max-width: 125px;
-    flex-basis: 125px;
-    transform: rotate(2deg);
+    width: 66px;
+    height: 132px;
+    padding: 4px;
+    border-radius: 12px;
+  }
+
+  .propflow-mobile-frame img {
+    border-radius: 9px;
+  }
+
+  .propflow-mobile-frame::before {
+    top: 6px;
+    width: 24px;
+    height: 5px;
   }
 }
