@@ -2242,37 +2242,101 @@ footer {
 }
 
 /* =========================================================
-   PROPFLOW — REAL PROJECT SCREENSHOTS
+   PROPFLOW — PREMIUM PROJECT SHOWCASE
 ========================================================= */
 
 .project-propflow {
+  position: relative;
   overflow: hidden;
+  padding: 0 !important;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(99, 102, 241, 0.16), transparent 30%),
+    radial-gradient(circle at 12% 85%, rgba(45, 212, 191, 0.09), transparent 28%),
+    linear-gradient(135deg, #081116 0%, #102029 52%, #060c10 100%);
 }
+
+.project-propflow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.035),
+      transparent 35%,
+      rgba(255,255,255,0.015)
+    );
+}
+
+/* Main composition */
 
 .propflow-real-showcase {
+  position: relative;
   width: 100%;
-  padding: 28px 20px 36px;
-  background: var(--surface, #f7f7f5);
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  padding: 42px 20px 44px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Full-width 16:9 presentation */
 
 .propflow-dashboard-frame {
+  position: relative;
   width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.09);
-  box-shadow: 0 18px 50px rgba(0,0,0,.10);
+  max-width: none;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 17px;
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 35px 85px rgba(0,0,0,0.48),
+    0 12px 30px rgba(0,0,0,0.22),
+    0 0 0 1px rgba(0,0,0,0.20);
+  transform: rotate(-0.7deg);
+  transform-origin: center;
+  z-index: 2;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
+.project-propflow:hover .propflow-dashboard-frame {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow:
+    0 46px 105px rgba(0,0,0,0.56),
+    0 15px 35px rgba(0,0,0,0.25),
+    0 0 0 1px rgba(255,255,255,0.14);
+}
+
+/* Exact 16:9 viewport */
+
 .propflow-dashboard-window {
+  position: relative;
   width: 100%;
-  height: min(68vw, 680px);
+  aspect-ratio: 16 / 9;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: thin;
+  border-radius: 11px;
   background: #fff;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.20) transparent;
+}
+
+.propflow-dashboard-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.propflow-dashboard-window::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.propflow-dashboard-window::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.22);
+  border-radius: 999px;
 }
 
 .propflow-dashboard-window img {
@@ -2281,69 +2345,118 @@ footer {
   height: auto;
 }
 
+/* Floating mobile — Parentura-style visual depth */
+
 .propflow-mobile-wrap {
-  display: flex;
-  justify-content: center;
-  padding-top: 36px;
+  position: absolute;
+  right: 5%;
+  bottom: 25px;
+  z-index: 5;
+  filter: drop-shadow(0 28px 50px rgba(0,0,0,0.52));
 }
 
 .propflow-mobile-frame {
-  width: min(270px, 30%);
+  position: relative;
+  width: 118px;
+  padding: 5px;
+  box-sizing: border-box;
   overflow: hidden;
-  border-radius: 24px;
-  background: #fff;
-  border: 6px solid #171717;
-  box-shadow: 0 18px 45px rgba(0,0,0,.14);
+  border-radius: 20px;
+  background: #080d10;
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow:
+    0 25px 55px rgba(0,0,0,0.54),
+    0 0 0 1px rgba(255,255,255,0.07);
+  transform: rotate(4deg);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.project-propflow:hover .propflow-mobile-frame {
+  transform: rotate(0deg) translateY(-7px);
+  box-shadow:
+    0 32px 65px rgba(0,0,0,0.60),
+    0 0 0 1px rgba(255,255,255,0.13);
+}
+
+.propflow-mobile-frame::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 36px;
+  height: 7px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #06090b;
+  z-index: 3;
 }
 
 .propflow-mobile-frame img {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 15px;
 }
+
+/* Tablet */
 
 @media (max-width: 850px) {
   .propflow-real-showcase {
-    padding: 20px 14px 30px;
+    padding: 32px 14px 36px;
   }
 
   .propflow-dashboard-frame {
-    border-radius: 14px;
+    padding: 6px;
+    border-radius: 15px;
   }
 
   .propflow-dashboard-window {
-    height: 68vw;
+    border-radius: 10px;
   }
 
   .propflow-mobile-wrap {
-    padding-top: 30px;
+    right: 4%;
+    bottom: 20px;
   }
 
   .propflow-mobile-frame {
-    width: min(250px, 48%);
+    width: 105px;
   }
 }
 
+/* Mobile */
+
 @media (max-width: 600px) {
   .propflow-real-showcase {
-    padding: 10px 8px 24px;
+    padding: 16px 8px 28px;
+    flex-direction: column;
   }
 
   .propflow-dashboard-frame {
-    border-radius: 11px;
+    padding: 5px;
+    border-radius: 13px;
+    transform: none;
   }
 
   .propflow-dashboard-window {
-    height: 72vw;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    max-height: none;
+    border-radius: 9px;
   }
 
   .propflow-mobile-wrap {
-    padding-top: 24px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    align-self: center;
+    margin-top: -5px;
   }
 
   .propflow-mobile-frame {
-    width: min(220px, 65%);
-    border-width: 5px;
-    border-radius: 20px;
+    width: 125px;
+    transform: rotate(2deg);
   }
 }
