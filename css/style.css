@@ -2252,92 +2252,86 @@ footer {
 .propflow-real-showcase {
   width: 100%;
   padding: 28px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(260px, .85fr);
-  gap: 18px;
   background: var(--surface, #f7f7f5);
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
-.propflow-main-shot,
-.propflow-shot,
+.propflow-dashboard-shot,
+.propflow-feature-shot,
 .propflow-mobile-shot {
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 16px;
   background: #fff;
   border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  box-shadow: 0 12px 35px rgba(0,0,0,.07);
 }
 
-.propflow-main-shot img,
-.propflow-shot img,
+.propflow-dashboard-shot img,
+.propflow-feature-shot img,
 .propflow-mobile-shot img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.propflow-main-shot {
-  grid-row: span 2;
-  align-self: start;
+.propflow-dashboard-shot {
+  width: 100%;
+  margin-bottom: 22px;
 }
 
-.propflow-side-shots {
+.propflow-feature-grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-.propflow-bottom-shots {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, .38fr);
-  gap: 18px;
-  align-items: start;
+.propflow-feature-shot {
+  min-width: 0;
+}
+
+.propflow-mobile-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
 }
 
 .propflow-mobile-shot {
-  max-width: 320px;
-  justify-self: end;
-}
-
-.project-propflow .project-content {
-  position: relative;
-  z-index: 2;
+  width: min(300px, 42%);
 }
 
 @media (max-width: 850px) {
   .propflow-real-showcase {
     padding: 18px;
+  }
+
+  .propflow-feature-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  .propflow-main-shot {
-    grid-row: auto;
-  }
-
-  .propflow-side-shots {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .propflow-bottom-shots {
-    grid-template-columns: 1fr 180px;
+  .propflow-mobile-shot {
+    width: min(300px, 65%);
   }
 }
 
 @media (max-width: 600px) {
   .propflow-real-showcase {
     padding: 10px;
-    gap: 10px;
   }
 
-  .propflow-side-shots,
-  .propflow-bottom-shots {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .propflow-dashboard-shot {
+    margin-bottom: 12px;
+  }
+
+  .propflow-feature-grid {
+    gap: 12px;
+  }
+
+  .propflow-mobile-wrap {
+    padding-top: 16px;
   }
 
   .propflow-mobile-shot {
-    max-width: 240px;
-    justify-self: center;
+    width: min(260px, 78%);
   }
 }
