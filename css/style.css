@@ -2243,11 +2243,12 @@ footer {
 
 /* =========================================================
    PROPFLOW — PREMIUM PROJECT SHOWCASE
-========================================================= */
+   ========================================================= */
 
 .project-propflow {
   position: relative;
   overflow: hidden;
+  min-height: 520px;
   padding: 0 !important;
   background:
     radial-gradient(circle at 82% 18%, rgba(99, 102, 241, 0.16), transparent 30%),
@@ -2269,33 +2270,39 @@ footer {
     );
 }
 
-/* Parentura-matched showcase sizing */
-
 .propflow-real-showcase {
   position: relative;
   width: 100%;
-  min-height: 405px;
-  padding: 32px 20px;
+  min-height: 520px;
+  padding: 44px 20px 42px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Full available width — same as Parentura */
-
 .propflow-dashboard-frame {
   position: relative;
   width: 100%;
   max-width: none;
   overflow: hidden;
-  padding: 0;
-  box-sizing: border-box;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  transform: none;
+  border-radius: 15px;
+  background: #101719;
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(255, 255, 255, 0.10);
+  transform: rotate(-1deg);
   z-index: 2;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.project-propflow:hover .propflow-dashboard-frame {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow:
+    0 44px 95px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 
 .propflow-dashboard-window {
@@ -2304,6 +2311,20 @@ footer {
   height: 405px;
   overflow: hidden;
   background: #fff;
+}
+
+.propflow-dashboard-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02),
+    transparent 15%,
+    transparent 82%,
+    rgba(0, 0, 0, 0.10)
+  );
 }
 
 .propflow-dashboard-window img {
@@ -2321,34 +2342,34 @@ footer {
   transform: translateY(calc(-100% + 405px));
 }
 
-/* Floating mobile — same Parentura sizing */
-
 .propflow-mobile-wrap {
   position: absolute;
   right: 5%;
-  bottom: 28px;
+  bottom: 30px;
   width: 116px;
-  height: 230px;
+  height: 225px;
   z-index: 4;
-  transform: rotate(3deg);
-  transition: transform 0.45s ease;
+  transform: rotate(4deg);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
 .project-propflow:hover .propflow-mobile-wrap {
-  transform: rotate(0deg) translateY(-5px);
+  transform: rotate(0deg) translateY(-7px);
 }
 
 .propflow-mobile-frame {
   position: relative;
   width: 116px;
-  height: 230px;
+  height: 225px;
   padding: 5px;
   box-sizing: border-box;
-  border-radius: 17px;
-  background: #101719;
+  border-radius: 19px;
+  background: #0b1012;
   box-shadow:
-    0 22px 45px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.12);
+    0 25px 52px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(255, 255, 255, 0.13);
   overflow: hidden;
 }
 
@@ -2374,12 +2395,14 @@ footer {
   background: #090d0e;
 }
 
-/* Tablet — exact Parentura breakpoint */
-
 @media (max-width: 850px) {
+  .project-propflow,
   .propflow-real-showcase {
-    min-height: 340px;
-    padding: 32px 14px;
+    min-height: 450px;
+  }
+
+  .propflow-real-showcase {
+    padding: 34px 14px;
   }
 
   .propflow-dashboard-window {
@@ -2390,35 +2413,39 @@ footer {
     transform: translateY(calc(-100% + 340px));
   }
 
-  .propflow-mobile-wrap {
+  .propflow-mobile-wrap,
+  .propflow-mobile-frame {
     width: 92px;
-    height: 185px;
+    height: 180px;
+  }
+
+  .propflow-mobile-wrap {
     right: 4%;
     bottom: 24px;
   }
 
   .propflow-mobile-frame {
-    width: 92px;
-    height: 185px;
+    border-radius: 15px;
   }
 
   .propflow-mobile-frame img {
-    border-radius: 10px;
-  }
-
-  .propflow-mobile-frame::before {
-    top: 7px;
-    width: 30px;
-    height: 6px;
+    border-radius: 11px;
   }
 }
 
-/* Mobile — exact Parentura breakpoint */
-
 @media (max-width: 600px) {
+  .project-propflow,
   .propflow-real-showcase {
-    min-height: 255px;
-    padding: 24px 8px;
+    min-height: 355px;
+  }
+
+  .propflow-real-showcase {
+    padding: 25px 8px 26px;
+  }
+
+  .propflow-dashboard-frame {
+    border-radius: 11px;
+    transform: none;
   }
 
   .propflow-dashboard-window {
@@ -2429,18 +2456,25 @@ footer {
     transform: translateY(calc(-100% + 255px));
   }
 
-  .propflow-mobile-wrap {
+  .propflow-mobile-wrap,
+  .propflow-mobile-frame {
     width: 66px;
     height: 132px;
+  }
+
+  .propflow-mobile-wrap {
     right: 3%;
     bottom: 17px;
   }
 
   .propflow-mobile-frame {
-    width: 66px;
-    height: 132px;
     padding: 4px;
     border-radius: 12px;
+    transform: rotate(3deg);
+  }
+
+  .project-propflow:hover .propflow-mobile-frame {
+    transform: rotate(0deg);
   }
 
   .propflow-mobile-frame img {
